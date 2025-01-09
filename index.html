@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Three.js</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+    <div class="crosshair">
+        <!-- Crosshair lines -->
+        <div class="line top"></div>
+        <div class="line bottom"></div>
+        <div class="line left"></div>
+        <div class="line right"></div>
+    </div>
+    <img src="./image/hand.png" alt="UI Image" class="ui-image" id="fullscreenImage">
+
     <script type="importmap">
         {
             "imports" : {
-                "three" : "../node_modules/three/build/three.module.js",
+                "three" : "./node_modules/three/build/three.module.js",
+                "mouseCursorPointers": "./node_modules/three/examples/jsm/controls/PointerLockControls.js",
                 "dat.gui": "./node_modules/dat.gui/build/dat.gui.module.js",
-                "orbitControls": "./node_modules/three/examples/jsm/controls/OrbitControls.js"
+                "orbitControls": "./node_modules/three/examples/jsm/controls/OrbitControls.js",
+                "cannon-es": "./node_modules/cannon-es/dist/cannon-es.js"
             }
         }
     </script>
-
     <script type="module" src="src/main.js"></script>
 </body>
 </html>
