@@ -49,9 +49,28 @@ export default class Map{
             new CubeTest(world, scene, new CANNON.Vec3(-61.65983200844137, 4.3529395371049695, 17.23364014848228), new CANNON.Vec3(0.3, 0.5 ,2), 0x00ff00, 0),
             new CubeTest(world, scene, new CANNON.Vec3(-53.50983200844183, 4.3529395371049695, 11.5836401484822), new CANNON.Vec3(0.3, 0.5 ,7.8), 0x00ff00, 0),
             new CubeTest(world, scene, new CANNON.Vec3(-48.10983200844214, 4.30293953710497, 4.033640148482164), new CANNON.Vec3(5.5, 0.5 ,0.3), 0x00ff00, 0),
-            new CubeTest(world, scene, new CANNON.Vec3(-51.5779852621245, 0.48901539534193306, -32.820240531712656), new CANNON.Vec3(14, 0.5 ,16.5), 0x00ff00, 0),  
-            new CubeTest(world, scene, new CANNON.Vec3(-62.43548707041879, 1.815651025434061, -39.37757871551724), new CANNON.Vec3(1.5, 1.5, 1.5), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-51.5779852621245, 0.48901539534193306, -32.17024053171269), new CANNON.Vec3(14, 0.5 ,16), 0x00ff00, 0),  
+            new CubeTest(world, scene, new CANNON.Vec3(-63.43548707041873, 2.865651025434058, -40.327578715517184), new CANNON.Vec3(2, 2, 2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-49.982714676173245, 0.2551647892780488, -15.83609897743612), new CANNON.Vec3(4, 0.25, 0.5), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-57.547448208187966, 0.4942419901450224, -15.823250275442522), new CANNON.Vec3(4, 0.5, 0.5), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-42.19744820818884, 0.4942419901450224, -15.823250275442522), new CANNON.Vec3(4, 0.5, 0.5), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-58.48807509853876, 6.665100506135049, -20.105349625542928), new CANNON.Vec3(3.4, 6, 1), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-44.89508893290175, 5.476301066459069, -24.974229468999763), new CANNON.Vec3(3.2, 5, 4), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-53.74508893290125, 5.476301066459069, -24.82422946899976), new CANNON.Vec3(2, 5, 4), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-49.87519081784013, 8.23400009471504, -31.92977362315945), new CANNON.Vec3(2, 2.5, 11), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-39.35865471725059, 1.8853191712936133, -37.450492441461854), new CANNON.Vec3(1, 1, 1), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-37.458654717250695, 2.385319171293612, -37.450492441461854), new CANNON.Vec3(1, 1, 1), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-52.6889347971615, 4.325371445517642, -45.127213395489754), new CANNON.Vec3(5, 3.5, 3), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-63.4389347971609, 3.325371445517645, -48.02721339548959), new CANNON.Vec3(2, 2.7, 5.9), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-59.77263427264563, 3.436941847462456, -31.53165563089116), new CANNON.Vec3(6, 2.5, 3), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-66.21846745380817, 3.2915000819027185, -38.35916726892128), new CANNON.Vec3(1, 2.5, 4), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-54.75657316608885, 3.365815548519609, -50.966758147626756), new CANNON.Vec3(2.9, 3.5, 2.8), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-39.35865471725059, 1.8853191712936133, -37.450492441461854), new CANNON.Vec3(1, 1, 1), 0x00ff00, 0),
             
+
+
+
+
             
         ];
 
