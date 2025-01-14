@@ -60,6 +60,15 @@ export default class Map{
             new CubeTest(world, scene, new CANNON.Vec3(52.36, 2.65, -55.24), new CANNON.Vec3(1.5, 1.5, 1.5), 0x00ff00, 0),
             new CubeTest(world, scene, new CANNON.Vec3(13.86, 1.45, -43.83), new CANNON.Vec3(1.5, 1.5, 1.5), 0x00ff00, 0),
             new CubeTest(world, scene, new CANNON.Vec3(25.01, 1.97, -34.51), new CANNON.Vec3(2, 2, 2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(27.84, 0.93, -35.46), new CANNON.Vec3(1, 1, 1), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(14.32, 4.76, -60.03), new CANNON.Vec3(1, 2, 1), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(39.40, -4.83, -1.94), new CANNON.Vec3(1, 1, 2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(46.98, -4.74, -5.75), new CANNON.Vec3(1, 1, 2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(47.06, -2.88, -5.31), new CANNON.Vec3(1, 1, 1), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(31.60, 2.86, -4.80), new CANNON.Vec3(3, 3, 1), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(30.67, 1.88, -6.75), new CANNON.Vec3(2, 2, 1), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(30.62, 1.62, -9.55), new CANNON.Vec3(1.7, 1.6, 1.7), 0x00ff00, 0),
+            
         ];
     }
 
