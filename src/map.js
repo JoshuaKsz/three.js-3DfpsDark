@@ -80,10 +80,24 @@ export default class Map{
             new CubeTest(world, scene, new CANNON.Vec3(-11.164503540002974, -3.4961182383680223, -35.51379590750754), new CANNON.Vec3(4, 1, 2), 0x00ff00, 0),
             new CubeTest(world, scene, new CANNON.Vec3(-11.364503540002977, -4.396118238368019, -38.61379590750737), new CANNON.Vec3(4, 1, 1), 0x00ff00, 0),
             new CubeTest(world, scene, new CANNON.Vec3(-13.499195092367021, -0.754665246877481, 7.676489449507295), new CANNON.Vec3(2, 1, 11), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(12.7720907485816, 4.949326645539157, 19.746427421712212), new CANNON.Vec3(2, 6, 9), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(4.94767252495642, 4.857368479439979, 28.65335774098669), new CANNON.Vec3(9, 6, 2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-15.252327475043653, 4.857368479439979, 32.45335774098671), new CANNON.Vec3(12, 6, 2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(18.478381509955653, 4.769800381632966, 12.943944364368113), new CANNON.Vec3(4, 6, 2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-3.440267035802729, 4.661818939439008, 14.455413477139496), new CANNON.Vec3(7, 6, 1), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-13.44026703580279, 4.661818939439008, 13.455413477139482), new CANNON.Vec3(3, 6, 1), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-15.442022194236804, 2.3412385471995822, -51.89270316808889), new CANNON.Vec3(1, 6, 8), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-15.624864721568706, 6.040018037218257, -42.60356833292285), new CANNON.Vec3(1, 6, 2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-18.219292299111324, 5.053642718633982, -17.31589374336823), new CANNON.Vec3(1, 6, 2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-18.169292299111323, 8.60364271863398, -9.66589374336812), new CANNON.Vec3(1, 2, 6), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-16.078294660692123, 5.897089156028815, -2.194272051105659), new CANNON.Vec3(1, 6, 2), 0x00ff00, 0),
 
             
+            
+           
+            
 
-
+            
             
             
             
