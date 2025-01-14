@@ -34,8 +34,8 @@ function copyToClipboard(text) {
   
 export default class Game {
     constructor (scene, camera, renderer, world, width = window.innerWidth, height = window.innerHeight, player) {
-        // this.State = GameState.GAME_DEBUG;  
-        this.State = GameState.GAME_ACTIVE;
+        this.State = GameState.GAME_DEBUG;  
+        // this.State = GameState.GAME_ACTIVE;
         this.keyboard_input = new KeyboardInput();  
         this.Width = width;
         this.Height = height;
