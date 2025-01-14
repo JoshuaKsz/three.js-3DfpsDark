@@ -23,7 +23,7 @@ const cam = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeig
 cam.position.x = -16.3;
 cam.position.y = 1.88;
 cam.position.z = -18.21;
-cam.position.copy(new THREE.Vector3(32.714728346851736, 7.22616635211139, -20.117470404593252));
+cam.position.copy(new THREE.Vector3(9.563412632869412, 2.6289630099417525, -45.452324728385506));
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);

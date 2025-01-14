@@ -68,6 +68,32 @@ export default class Map{
             new CubeTest(world, scene, new CANNON.Vec3(31.60, 2.86, -4.80), new CANNON.Vec3(3, 3, 1), 0x00ff00, 0),
             new CubeTest(world, scene, new CANNON.Vec3(30.67, 1.88, -6.75), new CANNON.Vec3(2, 2, 1), 0x00ff00, 0),
             new CubeTest(world, scene, new CANNON.Vec3(30.62, 1.62, -9.55), new CANNON.Vec3(1.7, 1.6, 1.7), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(30.62, 1.62, -9.55), new CANNON.Vec3(1.7, 1.6, 1.7), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(39.18, 1.66, -71.72), new CANNON.Vec3(1.2, 1.2, 1.2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(32.15, 4.83, -70.8), new CANNON.Vec3(1, 2, 1.25), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(32.39, 3.88, -72.64), new CANNON.Vec3(1.2, 1, 1.25), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(18.20, 0.21, -71.05), new CANNON.Vec3(1, 1, 1), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(17.74, -2.14, -70.55), new CANNON.Vec3(1.5, 1.5, 1.5), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(20.64, -1.49, -70.55), new CANNON.Vec3(1.5, 1.5, 1.5), 0x00ff00, 0),
+
+            // Tangga
+            new CubeTest(world, scene, new CANNON.Vec3(48.43, 1.21, -26.89), new CANNON.Vec3(0.5, 0.3, 2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(47.48, 0.80, -26.89), new CANNON.Vec3(0.5, 0.3, 2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(46.53, 0.19, -26.89), new CANNON.Vec3(0.5, 0.3, 2), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(53.20, 2.20, -16.81), new CANNON.Vec3(0.5, 0.3, 2.5), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(34.12, 3.20, -83.43), new CANNON.Vec3(2.5, 0.3, 0.5), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(9.5, 2.17, -53.25), new CANNON.Vec3(2, 0.3, 0.5), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(9.6, 1.67, -52.25), new CANNON.Vec3(2, 0.3, 0.5), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(9.6, 1.21, -51.30), new CANNON.Vec3(2, 0.3, 0.5), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(9.54, 0.70, -50.40), new CANNON.Vec3(2, 0.3, 0.5), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(9.94, 0.24, -49.35), new CANNON.Vec3(2.2, 0.3, 0.5), 0x00ff00, 0),
+
+            // Pijakan
+            new CubeTest(world, scene, new CANNON.Vec3(11.29, -0.009, -47.90), new CANNON.Vec3(4, 0.1, 6), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(11.64, 2.88, -68.58), new CANNON.Vec3(4.3, 0.1, 15), 0x00ff00, 0),
+            
+            
+
             
         ];
     }
