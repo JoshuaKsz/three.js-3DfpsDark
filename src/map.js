@@ -89,6 +89,7 @@ export default class Map{
             new CubeTest(world, scene, new CANNON.Vec3(-48.97138241118863, 1.8858362422031563, -76.32045067850841), new CANNON.Vec3(1,2,1), 0x00ff00, 0),
             new CubeTest(world, scene, new CANNON.Vec3(-64.2314084951634, 3.899149231393345, -74.05611505865008), new CANNON.Vec3(1,4,20), 0x00ff00, 0),
             new CubeTest(world, scene, new CANNON.Vec3(-64.2314084951634, 3.899149231393345, -74.05611505865008), new CANNON.Vec3(1,4,1), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(-64.2314084951634, 3.899149231393345, -74.05611505865008), new CANNON.Vec3(1,4,1), 0x00ff00, 0),
             
             
 
