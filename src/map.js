@@ -111,6 +111,8 @@ export default class Map{
             new CubeTest(world, scene, new CANNON.Vec3(45.29, 5.27, -9.62), new CANNON.Vec3(9.1, 5.3, 0.1), 0x00ff00, 0),
             new CubeTest(world, scene, new CANNON.Vec3(52.60, 5.78, -53.07), new CANNON.Vec3(5, 5.3, 0.8), 0x00ff00, 0),
             new CubeTest(world, scene, new CANNON.Vec3(52.89, 5.78, -31.42), new CANNON.Vec3(5, 5.3, 0.8), 0x00ff00, 0),
+            new CubeTest(world, scene, new CANNON.Vec3(31.61, 5.94, -3.77), new CANNON.Vec3(3, 3, 0.1), 0x00ff00, 0),
+
         ];
     }
 
