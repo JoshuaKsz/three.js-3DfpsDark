@@ -38,11 +38,11 @@ export default class SoliderBody {
             
             this.model.scale.set(this.meshSize.x * 2, this.meshSize.y * 2, this.meshSize.z * 2);
             this.model.position.set(this.position);
-            this.model.name = "enemy";
+            this.model.name = "enemy0";
             // console.log(this.model.name);
             gltf.scene.traverse((child) => {
                 if (child.isMesh) {
-                    child.name = 'enemy';
+                    child.name = 'enemy0';
                     // console.log(child.name)
                 }
             });

@@ -7,6 +7,8 @@ import KeyboardInput from "./Keyboard_input.js";
 import LightGeo from "./light_geo.js";
 import PlaneMesh from "./plane_mesh.js";
 
+import Bullet from "./bullet.js";
+
 import CubeTest from "./cube_test.js";
 
 import Map from "./map.js";
@@ -23,9 +25,19 @@ var GameState;
     GameState[GameState["GAME_DEBUG"] = 3] = "GAME_DEBUG";
 })(GameState  || (GameState  = {}));
 
+// coupling vs cohesion
+// composition vs inheritance
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        console.log('Text copied to clipboard');
+    }).catch(function(err) {
+        console.error('Failed to copy text: ', err);
+    });
+}
+  
 export default class Game {
     constructor (scene, camera, renderer, world, width = window.innerWidth, height = window.innerHeight, player) {
-        // this.State = GameState.GAME_DEBUG;
+        // this.State = GameState.GAME_DEBUG;  
         this.State = GameState.GAME_ACTIVE;
         this.keyboard_input = new KeyboardInput();  
         this.Width = width;
@@ -38,16 +50,25 @@ export default class Game {
 
         this.rayCast = new THREE.Raycaster();
 
+        this.bullet = [];
+
         this.node = [];
         this.map = new Map(scene, world);
         this.player = player;
         const plane = new PlaneMesh(this.scene, this.world);
 
-        this.enemy = new EnemyBody(new CANNON.Vec3(-57.1, 5.54, 24.34), new SoliderBody(world, scene, new CANNON.Vec3(-57.1, 5.54, 24.34), new CANNON.Vec3(1, 1.5, 1), new CANNON.Vec3(1, 1, 1), 1));
+        this.enemy_node = [
+            new EnemyBody(new CANNON.Vec3(-57.1, 5.54, 24.34), new SoliderBody(world, scene, new CANNON.Vec3(-57.1, 5.54, 24.34), new CANNON.Vec3(1, 1.5, 1), new CANNON.Vec3(1, 1, 1), 1)),
+            new EnemyBody(new CANNON.Vec3(-54.864909983335906, 3.162859357850746, -62.86420430259549), new SoliderBody(world, scene, new CANNON.Vec3(-54.864909983335906, 3.162859357850746, -62.86420430259549), new CANNON.Vec3(1, 1.5, 1), new CANNON.Vec3(1, 1, 1), 1)),
+            
+            new EnemyBody(new CANNON.Vec3(-10.623636840430013, 4.044883297834085, -20.06935921875801), new SoliderBody(world, scene, new CANNON.Vec3(-10.623636840430013, 4.044883297834085, -20.06935921875801), new CANNON.Vec3(1, 1.5, 1), new CANNON.Vec3(1, 1, 1), 1)),
+            new EnemyBody(new CANNON.Vec3(23.34172829000856, 6.974449666219084, -76.55029691240725), new SoliderBody(world, scene, new CANNON.Vec3(23.34172829000856, 6.974449666219084, -76.55029691240725), new CANNON.Vec3(1, 1.5, 1), new CANNON.Vec3(1, 1, 1), 1)),
+
+        
+        ];
 
         this.light = new LightGeo(scene, new THREE.BoxGeometry(), new THREE.Vector3(0,1,0), 0xffffff);        
-        this.ambient = new THREE.AmbientLight(0xffffff,2)
-        scene.add(this.ambient);
+        
 
         this.controls = new PointerLockControls(
             this.cam,
@@ -59,7 +80,21 @@ export default class Game {
         if (this.State == GameState.GAME_DEBUG) {
             this.player.cam = this.player.physicsObject.boxBody;
         }
+        // this.ambient = new THREE.AmbientLight(0xffffff,2)
+        // scene.add(this.ambient);
 
+        // setInterval(function() {
+        //     // console.log(this.bullet);
+        //     if (this.bullet != undefined) {
+        //         for (let i = 0; i < this.bullet.length; i++ ){
+        //             this.bullet[i].bulletMove();
+        //             console.log("trash",this.bullet[i].position);
+        //         }
+        //     }
+        // }, 100);
+
+        
+        
 
         // document.addEventListener('pointerlockchange', () => {});
         document.body.addEventListener('click', (event) => {
@@ -82,23 +117,41 @@ export default class Game {
                     console.log(faceDir);
 
                     this.map.collisionMap[this.map.collisionMap.length-1].boxBody.position.copy(new CANNON.Vec3(faceDir.x, faceDir.y, faceDir.z));
-                } else {
+                } else {   
+                    const direction = new THREE.Vector3();
+                    
+                    this.cam.getWorldDirection(direction);
+                    direction.normalize();
+                    let faceDir = direction.clone().multiplyScalar(1);
+                    // faceDir.x += this.cam.position.x;
+                    // faceDir.y += this.cam.position.y;
+                    // faceDir.z += this.cam.position.z;
+                    
+                    console.log("dir",faceDir);
+                    this.bullet.push(new Bullet(scene, new THREE.Vector3(this.player.physicsObject.boxBody.position.x, this.player.physicsObject.boxBody.position.y, this.player.physicsObject.boxBody.position.z), new THREE.Vector3(0.01,0.01,0.01), 0xffff00, direction));
+                    console.log("t",this.cam.position.y);                    
+                    console.log(this.cam.position);
+                    // setTimeout(() => {
+                    //     this.bullet = this.bullet;  // Update `l` after 1 second
+                    // }, 100);
+                    
                     this.rayCast.setFromCamera({x: 0, y: 0}, this.cam);
     
                     let items = this.rayCast.intersectObjects(this.scene.children);
                     console.log(items);
                     if (items.length > 0) {
                         items.forEach((i)=>{
-                            console.log(i.object.name);
-                            if (i.object.name == "enemy") {
-                              console.log(i);
-                              hit = true;
+                            // console.log(i.object.name);
+                            if (i.object.name.includes("enemy")) {
+                                // console.log(i.object.name.match(/\d+/));
+                                // console.log(i);
+                                hit = true;
                             }
                         })
                     }
                     this.node.push(new CubeTest(world, scene, new CANNON.Vec3(0, 5, 0), new CANNON.Vec3(1, 1, 1), 0x00ff00, 1));
                     if (hit) {
-                        this.enemy.removeModel(this.scene);
+                        this.enemy_node[0].removeModel(this.scene);
                         // this.enemy = undefined;
                         hit = false;
                     }
@@ -147,7 +200,7 @@ export default class Game {
             if (this.keyboard_input.justPressedKey[32]) {
                 const pushKaki = new CANNON.Vec3();
                 pushKaki.copy(this.player.physicsObject.boxBody.position)
-                pushKaki.y -= 100;
+                // pushKaki.y -= 100;
                 // pushKaki.x -= 1;
                 this.player.physicsObject.boxBody.applyImpulse(new CANNON.Vec3(0, 100, 0), pushKaki);
                 this.keyboard_input.justPressedKey[32] = false;
@@ -193,6 +246,14 @@ export default class Game {
             }
         }
         else if (this.State == GameState.GAME_DEBUG) {
+            // m
+            if (this.keyboard_input.Keys[77]) {
+                let pos = this.map.collisionMap[this.map.collisionMap.length-1].boxBody.position; 
+                console.log(pos)
+
+                let text = `${pos.x}, ${pos.y}, ${pos.z}`; 
+                copyToClipboard(JSON.stringify(text).replace('"','').replace('"',''));
+            }
             // w
             if (this.keyboard_input.Keys[87]) {
                 this.controls.moveForward(velocity);
@@ -265,8 +326,27 @@ export default class Game {
             item.update();
         });
         this.map.allCollisionPhysicsUpdate();
-        this.enemy.modelUpdate();
+        this.enemy_node.forEach(enemy => {
+            enemy.modelUpdate();
+        });
         // this.enemy.physicsObject.update();
+        // this.bullet.forEach(bul => {
+        //     bul.bulletMove();
+        //     // console.log(bul.position);
+        // });
+
+        // setInterval(function() {
+        //     console.log(this.bullet);
+        //     if (this.bullet != undefined) {
+        //         for (let i = 0; i < this.bullet.size(); i++ ){
+            //             console.log("trash",this.bullet[i].position);
+            //         }
+            //     }
+            // }, 1000);
+        for (let i = 0; i < this.bullet.length; i++ ){
+            this.bullet[i].bulletMove();
+            // console.log("trash",this.bullet[i].position);
+        }
     }
 
     changeHand(src) {

@@ -14,14 +14,17 @@ import * as CANNON from 'cannon-es';
 import Game from "./game.js";
 
 import CubeTest from "./cube_test.js";
+import Bullet from "./bullet.js";
 
 const scene = new THREE.Scene();
 
+// coupling vs cohesion
 
 const cam = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
-cam.position.x = -19;
-cam.position.y = 7.5;
-cam.position.z = 23;
+cam.position.x = -16.3;
+cam.position.y = 1.88;
+cam.position.z = -18.21;
+cam.position.copy(new THREE.Vector3(-9.98, 5.325, -20.4));
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -31,8 +34,18 @@ renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setClearColor(0x0a0a0a);
 
+const spotlight = new THREE.SpotLight(0xffffff, 10, 1000, Math.PI / 8, 0.1, 2);
+spotlight.cutOff = 10 * Math.PI / 180;
+spotlight.outerCutOff = 15 * Math.PI / 180;
+spotlight.castShadow = true;
+
+spotlight.shadow.mapSize.width = 1024;
+spotlight.shadow.mapSize.height = 1024;
+
+scene.add(spotlight);
+
 const world = new CANNON.World();
-const player = new PlayerBody(new CANNON.Vec3(-19, 7.5, 23), new CubeTest(world, scene, new CANNON.Vec3(-19, 7.5, 23), new CANNON.Vec3(1, 1.5, 1), 0x00ff00, 70), cam);
+const player = new PlayerBody(new CANNON.Vec3(-19, 7.5, 23), new CubeTest(world, scene, new CANNON.Vec3(-19, 7.5, 23), new CANNON.Vec3(1, 1.5, 1), 0x00ff00, 70), cam, spotlight);
 const fps3dDark = new Game(scene, cam, renderer, world, window.innerWidth, window.innerHeight, player);
 
 function main() {

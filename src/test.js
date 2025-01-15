@@ -15,8 +15,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Lighting
-const light = new THREE.AmbientLight(0x404040, 5); // Ambient light
-scene.add(light);
+// const light = new THREE.AmbientLight(0x404040, 5); // Ambient light
+// scene.add(light);
 
 // Load a GLTF model
 const loader = new GLTFLoader();
